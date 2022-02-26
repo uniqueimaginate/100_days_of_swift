@@ -17,9 +17,11 @@ class ViewController: UIViewController {
     var score = 0
     var correctAnswer = 0
     var tried = 0
+    var tapped = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Score", style: .plain, target: self, action: #selector(showScore))
         
         button1.layer.borderWidth = 1
         button2.layer.borderWidth = 1
@@ -66,6 +68,16 @@ class ViewController: UIViewController {
             score = 0
         }
         askQuestion(action: nil)
+        
+    }
+    
+    @objc func showScore(){
+        tapped = !tapped
+        if tapped {
+            navigationItem.rightBarButtonItem?.title = "\(score)"
+        } else {
+            navigationItem.rightBarButtonItem?.title = "Score"
+        }
         
     }
     

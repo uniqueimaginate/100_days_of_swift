@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Project1
+//  Project3
 //
 //  Created by Peter on 2022/02/23.
 //
@@ -26,8 +26,6 @@ class ViewController: UITableViewController {
         pictures.sort()
         print(pictures)
         title = "Storm Viewer"
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showTapped))
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
@@ -52,12 +50,5 @@ class ViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
-    @objc func showTapped(){
-        guard let displayName = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") else { return }
-        let recommendedString = "Recommend this app: \(displayName)"
-        let vc = UIActivityViewController(activityItems: [recommendedString], applicationActivities: [])
-        
-        present(vc, animated: true, completion: nil)
-    }
 }
 
