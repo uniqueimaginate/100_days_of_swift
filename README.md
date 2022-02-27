@@ -3,6 +3,8 @@
 [Hacking With Swift: 100 Days of Swift](https://www.hackingwithswift.com/100).   
 [Hacking With Swift: 100 Days of SwiftUI](https://www.hackingwithswift.com/100/swiftui)
 
+[프로젝트 상세 설명 노션](https://uniqueimaginate.notion.site/0dcdf114967b422f9be92eb0b012b07f)
+
 ## 100 Days of Swift
 - Day1: 	`2022.02.20`
 - Day2: 	`2022.02.20`
