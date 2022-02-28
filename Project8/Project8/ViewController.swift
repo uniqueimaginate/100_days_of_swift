@@ -17,10 +17,14 @@ class ViewController: UIViewController {
     
     var activatedButtons = [UIButton]()
     var solutions = [String]()
-    
+    var total = 0
     var score = 0 {
         didSet {
             scoreLabel.text = "Score: \(score)"
+            
+            if oldValue < score {
+                total += 1
+            }
         }
     }
     var level = 1
@@ -126,13 +130,15 @@ class ViewController: UIViewController {
             for col in 0..<5 {
                 // create a new button and give it a big font size
                 let letterButton = UIButton(type: .system)
+                letterButton.layer.borderColor = UIColor.gray.cgColor
+                letterButton.layer.borderWidth = 1
                 letterButton.titleLabel?.font = UIFont.systemFont(ofSize: 36)
 
                 // give the button some temporary text so we can see it on-screen
                 letterButton.setTitle("WWW", for: .normal)
 
                 // calculate the frame of this button using its column and row
-                let frame = CGRect(x: col * width, y: row * height, width: width, height: height)
+                let frame = CGRect(x: col * width, y: row * height, width: width-1, height: height-1)
                 letterButton.frame = frame
 
                 // add it to the buttons view
@@ -179,11 +185,21 @@ class ViewController: UIViewController {
             currentAnswer.text = ""
             score += 1
             
-            if score % 7 == 0 {
+            if total % 7 == 0 {
                 let ac = UIAlertController(title: "Well done!", message: "Are you ready for the next level?", preferredStyle: .alert)
                 ac.addAction(UIAlertAction(title: "Let's go!", style: .default, handler: levelUp))
                 present(ac, animated: true)
             }
+        } else {
+            for button in activatedButtons {
+                button.isHidden = false
+            }
+            activatedButtons.removeAll()
+            currentAnswer.text = ""
+            score -= 1
+            let ac = UIAlertController(title: "Wrong Answer", message: "You submitted wrong answer", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            present(ac, animated: true)
         }
     }
     
