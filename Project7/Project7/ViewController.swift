@@ -59,7 +59,13 @@ class ViewController: UITableViewController {
                 return
             }
             
-            self.filteredPetitions = self.petitions.filter { $0.title.lowercased().contains(searchText) }
+            DispatchQueue.global(qos: .userInteractive).async {
+                self.filteredPetitions = self.petitions.filter { $0.title.lowercased().contains(searchText) }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+            
             self.tableView.reloadData()
             
         }

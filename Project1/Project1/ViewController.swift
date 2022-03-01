@@ -16,17 +16,24 @@ class ViewController: UITableViewController {
         // Do any additional setup after loading the view.
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
-        let items = try! fm.contentsOfDirectory(atPath: path)
         
-        for item in items{
-            if item.hasPrefix("nssl"){
-                pictures.append(item)
+        DispatchQueue.global(qos: .userInteractive).async {
+            let items = try! fm.contentsOfDirectory(atPath: path)
+            
+            for item in items{
+                if item.hasPrefix("nssl"){
+                    self.pictures.append(item)
+                }
             }
-        }
-        pictures.sort()
-        print(pictures)
-        title = "Storm Viewer"
+            self.pictures.sort()
         
+            DispatchQueue.main.async {
+                self.tableView.performSelector(onMainThread: #selector(UITableView.reloadData), with: nil, waitUntilDone: false)
+            }
+            
+        }
+        
+        title = "Storm Viewer"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showTapped))
         navigationController?.navigationBar.prefersLargeTitles = true
     }
