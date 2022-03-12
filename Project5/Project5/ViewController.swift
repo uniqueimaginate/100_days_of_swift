@@ -29,8 +29,18 @@ class ViewController: UITableViewController {
     
     
     func startGame(){
-        title = allWords.randomElement()
-        usedWords.removeAll(keepingCapacity: true)
+        if let temp = UserDefaults.standard.string(forKey: "current") {
+            title = temp
+        } else {
+            title = allWords.randomElement()
+        }
+        
+        if let temp = UserDefaults.standard.object(forKey: "usedWords") as? [String] {
+            usedWords = temp
+        } else {
+            usedWords.removeAll(keepingCapacity: true)
+        }
+        
         tableView.reloadData()
     }
     
@@ -98,7 +108,7 @@ class ViewController: UITableViewController {
                     
                     let indexPath = IndexPath(row: 0, section: 0)
                     tableView.insertRows(at: [indexPath], with: .automatic)
-                    
+                    save()
                     return
                 } else {
                     showErrorMessage(title: "Word not recognised", message: "You can't just make them up, you know!")
@@ -116,6 +126,12 @@ class ViewController: UITableViewController {
         let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
         present(ac, animated: true)
+    }
+    
+    func save(){
+        UserDefaults.standard.set(usedWords, forKey: "usedWords")
+        UserDefaults.standard.set(title, forKey: "current")
+        print(title)
     }
 }
 

@@ -10,15 +10,15 @@
 		D0772DDD27CF0396003CAB77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0772DDC27CF0396003CAB77 /* AppDelegate.swift */; };
 		D0772DDF27CF0396003CAB77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0772DDE27CF0396003CAB77 /* SceneDelegate.swift */; };
 		D0772DE127CF0396003CAB77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0772DE027CF0396003CAB77 /* ViewController.swift */; };
-		D0772DE427CF0396003CAB77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0772DE227CF0396003CAB77 /* Main.storyboard */; };
 		D0772DE627CF0398003CAB77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0772DE527CF0398003CAB77 /* Assets.xcassets */; };
 		D0772DE927CF0398003CAB77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0772DE727CF0398003CAB77 /* LaunchScreen.storyboard */; };
 		D090784E27D3ACC400E15C6A /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D090784D27D3ACC400E15C6A /* PersonCell.swift */; };
 		D090785027D4FCE900E15C6A /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D090784F27D4FCE900E15C6A /* Person.swift */; };
+		D0F136D027DA385F0039D3F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0772DE227CF0396003CAB77 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D0772DD927CF0396003CAB77 /* Project10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project10.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0772DD927CF0396003CAB77 /* Project12a.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project12a.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0772DDC27CF0396003CAB77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0772DDE27CF0396003CAB77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D0772DE027CF0396003CAB77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,7 +44,7 @@
 		D0772DD027CF0396003CAB77 = {
 			isa = PBXGroup;
 			children = (
-				D0772DDB27CF0396003CAB77 /* Project10 */,
+				D0772DDB27CF0396003CAB77 /* Project12a */,
 				D0772DDA27CF0396003CAB77 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,12 +52,12 @@
 		D0772DDA27CF0396003CAB77 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D0772DD927CF0396003CAB77 /* Project10.app */,
+				D0772DD927CF0396003CAB77 /* Project12a.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D0772DDB27CF0396003CAB77 /* Project10 */ = {
+		D0772DDB27CF0396003CAB77 /* Project12a */ = {
 			isa = PBXGroup;
 			children = (
 				D0772DDC27CF0396003CAB77 /* AppDelegate.swift */,
@@ -70,15 +70,15 @@
 				D0772DE727CF0398003CAB77 /* LaunchScreen.storyboard */,
 				D0772DEA27CF0398003CAB77 /* Info.plist */,
 			);
-			path = Project10;
+			path = Project12a;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D0772DD827CF0396003CAB77 /* Project10 */ = {
+		D0772DD827CF0396003CAB77 /* Project12a */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D0772DED27CF0398003CAB77 /* Build configuration list for PBXNativeTarget "Project10" */;
+			buildConfigurationList = D0772DED27CF0398003CAB77 /* Build configuration list for PBXNativeTarget "Project12a" */;
 			buildPhases = (
 				D0772DD527CF0396003CAB77 /* Sources */,
 				D0772DD627CF0396003CAB77 /* Frameworks */,
@@ -88,9 +88,9 @@
 			);
 			dependencies = (
 			);
-			name = Project10;
+			name = Project12a;
 			productName = Project10;
-			productReference = D0772DD927CF0396003CAB77 /* Project10.app */;
+			productReference = D0772DD927CF0396003CAB77 /* Project12a.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -108,7 +108,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D0772DD427CF0396003CAB77 /* Build configuration list for PBXProject "Project10" */;
+			buildConfigurationList = D0772DD427CF0396003CAB77 /* Build configuration list for PBXProject "Project12a" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -121,7 +121,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D0772DD827CF0396003CAB77 /* Project10 */,
+				D0772DD827CF0396003CAB77 /* Project12a */,
 			);
 		};
 /* End PBXProject section */
@@ -131,9 +131,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0F136D027DA385F0039D3F8 /* Main.storyboard in Resources */,
 				D0772DE927CF0398003CAB77 /* LaunchScreen.storyboard in Resources */,
 				D0772DE627CF0398003CAB77 /* Assets.xcassets in Resources */,
-				D0772DE427CF0396003CAB77 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,7 +299,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G363Z4V6NY;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Project10/Info.plist;
+				INFOPLIST_FILE = Project12a/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -310,7 +310,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.uniqueimaginate.Project10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.uniqueimaginate.Project12a;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -327,7 +327,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G363Z4V6NY;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Project10/Info.plist;
+				INFOPLIST_FILE = Project12a/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -338,7 +338,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.uniqueimaginate.Project10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.uniqueimaginate.Project12a;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -349,7 +349,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D0772DD427CF0396003CAB77 /* Build configuration list for PBXProject "Project10" */ = {
+		D0772DD427CF0396003CAB77 /* Build configuration list for PBXProject "Project12a" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D0772DEB27CF0398003CAB77 /* Debug */,
@@ -358,7 +358,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D0772DED27CF0398003CAB77 /* Build configuration list for PBXNativeTarget "Project10" */ = {
+		D0772DED27CF0398003CAB77 /* Build configuration list for PBXNativeTarget "Project12a" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D0772DEE27CF0398003CAB77 /* Debug */,

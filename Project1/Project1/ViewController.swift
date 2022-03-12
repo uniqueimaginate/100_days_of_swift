@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UITableViewController {
 
     var pictures = [String]()
+    var numbers = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,13 @@ class ViewController: UITableViewController {
                     self.pictures.append(item)
                 }
             }
+            
+            if let temp = UserDefaults.standard.object(forKey: "numbers") as? [Int] {
+                self.numbers = temp
+            } else {
+                self.numbers = Array(repeating: 0, count: self.pictures.count)
+            }
+            
             self.pictures.sort()
         
             DispatchQueue.main.async {
@@ -46,6 +54,7 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Picture", for: indexPath)
         
         cell.textLabel?.text = pictures[indexPath.row]
+        cell.detailTextLabel?.text = "\(numbers[indexPath.row])"
         return cell
     }
     
@@ -54,6 +63,9 @@ class ViewController: UITableViewController {
             vc.selectedImage = pictures[indexPath.row]
             vc.totalPictures = pictures.count
             vc.selectedPictureNumber = indexPath.row + 1
+            numbers[indexPath.row] += 1
+            tableView.reloadData()
+            self.save()
             navigationController?.pushViewController(vc, animated: true)
         }
         tableView.deselectRow(at: indexPath, animated: true)
@@ -65,6 +77,10 @@ class ViewController: UITableViewController {
         let vc = UIActivityViewController(activityItems: [recommendedString], applicationActivities: [])
         
         present(vc, animated: true, completion: nil)
+    }
+    
+    func save(){
+        UserDefaults.standard.set(numbers, forKey: "numbers")
     }
 }
 

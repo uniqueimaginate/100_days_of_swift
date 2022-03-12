@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     var correctAnswer = 0
     var tried = 0
     var tapped = false
+    var highestScore = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,8 @@ class ViewController: UIViewController {
         button3.layer.borderColor = UIColor.lightGray.cgColor
         
         countries += ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
-
+        
+        highestScore = UserDefaults.standard.integer(forKey: "highestScore")
         askQuestion()
     }
     
@@ -61,9 +63,18 @@ class ViewController: UIViewController {
         }
         
         if tried == 10 {
-            let ac = UIAlertController(title: title, message: "Your final score is \(score).", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
-            present(ac, animated: true)
+            if score > highestScore {
+                highestScore = score
+                save()
+                let ac = UIAlertController(title: title, message: "Your new highest score is \(score).", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
+                present(ac, animated: true)
+            } else {
+                let ac = UIAlertController(title: title, message: "Your final score is \(score).", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
+                present(ac, animated: true)
+            }
+            
             tried = 0
             score = 0
         }
@@ -78,7 +89,10 @@ class ViewController: UIViewController {
         } else {
             navigationItem.rightBarButtonItem?.title = "Score"
         }
-        
+    }
+    
+    func save(){
+        UserDefaults.standard.set(highestScore, forKey: "highestScore")
     }
     
 }
