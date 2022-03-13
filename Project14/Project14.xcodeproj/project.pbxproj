@@ -23,6 +23,7 @@
 		D06E62B827DDBAB500ECF917 /* whackMask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D06E62B027DDBAB500ECF917 /* whackMask@2x.png */; };
 		D06E62B927DDBAB500ECF917 /* whackBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D06E62B127DDBAB500ECF917 /* whackBackground@2x.png */; };
 		D06E62BB27DDBAFD00ECF917 /* WhackSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E62BA27DDBAFD00ECF917 /* WhackSlot.swift */; };
+		D06E62BF27DDC96300ECF917 /* gameover.caf in Resources */ = {isa = PBXBuildFile; fileRef = D06E62BE27DDC90100ECF917 /* gameover.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		D06E62B027DDBAB500ECF917 /* whackMask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whackMask@2x.png"; sourceTree = "<group>"; };
 		D06E62B127DDBAB500ECF917 /* whackBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whackBackground@2x.png"; sourceTree = "<group>"; };
 		D06E62BA27DDBAFD00ECF917 /* WhackSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackSlot.swift; sourceTree = "<group>"; };
+		D06E62BE27DDC90100ECF917 /* gameover.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gameover.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				D06E62AA27DDBAB500ECF917 /* whackBad.caf */,
 				D06E62AB27DDBAB500ECF917 /* whack.caf */,
+				D06E62BE27DDC90100ECF917 /* gameover.caf */,
 				D06E62AC27DDBAB500ECF917 /* gameOver@2x.png */,
 				D06E62AD27DDBAB500ECF917 /* penguinEvil@2x.png */,
 				D06E62AE27DDBAB500ECF917 /* whackHole@2x.png */,
@@ -167,6 +170,7 @@
 				D06E629527DDB92E00ECF917 /* GameScene.sks in Resources */,
 				D06E62A027DDB93000ECF917 /* Assets.xcassets in Resources */,
 				D06E62B927DDBAB500ECF917 /* whackBackground@2x.png in Resources */,
+				D06E62BF27DDC96300ECF917 /* gameover.caf in Resources */,
 				D06E62B627DDBAB500ECF917 /* whackHole@2x.png in Resources */,
 				D06E62A327DDB93000ECF917 /* LaunchScreen.storyboard in Resources */,
 				D06E62B527DDBAB500ECF917 /* penguinEvil@2x.png in Resources */,

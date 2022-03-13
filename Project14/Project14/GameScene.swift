@@ -16,6 +16,7 @@ class GameScene: SKScene {
     }
     var slots = [WhackSlot]()
     var popupTime = 0.85
+    var numRounds = 0
 
     
     override func didMove(to view: SKView) {
@@ -43,6 +44,30 @@ class GameScene: SKScene {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else { return }
+        let location = touch.location(in: self)
+        let tappedNodes = nodes(at: location)
+        
+        for node in tappedNodes {
+            guard let whackSlot = node.parent?.parent as? WhackSlot else { continue }
+            if !whackSlot.isVisible { continue }
+            if whackSlot.isHit { continue }
+            whackSlot.hit()
+
+            if node.name == "charFriend" {
+                // they shouldn't have whacked this penguin
+                score -= 5
+
+                run(SKAction.playSoundFileNamed("whackBad.caf", waitForCompletion: false))
+            } else if node.name == "charEnemy" {
+                // they should have whacked this one
+                whackSlot.charNode.xScale = 0.85
+                whackSlot.charNode.yScale = 0.85
+                score += 1
+
+                run(SKAction.playSoundFileNamed("whack.caf", waitForCompletion: false))
+            }
+        }
     }
     
     func createSlot(at position: CGPoint){
@@ -53,6 +78,30 @@ class GameScene: SKScene {
     }
     
     func createEnemy() {
+        numRounds += 1
+
+        if numRounds >= 5 {
+            for slot in slots {
+                slot.hide()
+            }
+
+            let gameOver = SKSpriteNode(imageNamed: "gameOver")
+            
+            gameOver.position = CGPoint(x: 512, y: 384)
+            gameOver.zPosition = 1
+            addChild(gameOver)
+            run(SKAction.playSoundFileNamed("gameover.caf", waitForCompletion: false))
+            
+            let finalScore = SKLabelNode(fontNamed: "Chalkduster")
+            finalScore.text = "Final Score: \(score)"
+            finalScore.position = CGPoint(x: 512, y: 300)
+            finalScore.horizontalAlignmentMode = .center
+            finalScore.fontSize = 48
+            addChild(finalScore)
+            
+            return
+        }
+        
         popupTime *= 0.991
 
         slots.shuffle()
