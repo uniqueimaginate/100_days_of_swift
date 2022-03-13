@@ -14,6 +14,7 @@
 		D06E632127DE1B6E00ECF917 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D06E632027DE1B6E00ECF917 /* Assets.xcassets */; };
 		D06E632427DE1B6E00ECF917 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D06E632227DE1B6E00ECF917 /* LaunchScreen.storyboard */; };
 		D06E632C27DE36C200ECF917 /* Capital.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E632B27DE36C200ECF917 /* Capital.swift */; };
+		D06E632E27DE3D7B00ECF917 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E632D27DE3D7B00ECF917 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		D06E632327DE1B6E00ECF917 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D06E632527DE1B6E00ECF917 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D06E632B27DE36C200ECF917 /* Capital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capital.swift; sourceTree = "<group>"; };
+		D06E632D27DE3D7B00ECF917 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				D06E631B27DE1B6D00ECF917 /* ViewController.swift */,
 				D06E632B27DE36C200ECF917 /* Capital.swift */,
 				D06E631D27DE1B6D00ECF917 /* Main.storyboard */,
+				D06E632D27DE3D7B00ECF917 /* WebViewController.swift */,
 				D06E632027DE1B6E00ECF917 /* Assets.xcassets */,
 				D06E632227DE1B6E00ECF917 /* LaunchScreen.storyboard */,
 				D06E632527DE1B6E00ECF917 /* Info.plist */,
@@ -144,6 +147,7 @@
 				D06E631C27DE1B6D00ECF917 /* ViewController.swift in Sources */,
 				D06E631827DE1B6D00ECF917 /* AppDelegate.swift in Sources */,
 				D06E632C27DE36C200ECF917 /* Capital.swift in Sources */,
+				D06E632E27DE3D7B00ECF917 /* WebViewController.swift in Sources */,
 				D06E631A27DE1B6D00ECF917 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -38,6 +38,40 @@
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="115.84821428571428"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="5m5-iN-3Uc">
+            <objects>
+                <viewController storyboardIdentifier="webView" id="Ht8-M2-Eox" customClass="WebViewController" customModule="Project16" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EId-oR-ko7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xtl-Az-3si">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="prW-HK-t45"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xtl-Az-3si" firstAttribute="top" secondItem="prW-HK-t45" secondAttribute="top" id="9h7-dJ-BlR"/>
+                            <constraint firstItem="prW-HK-t45" firstAttribute="bottom" secondItem="xtl-Az-3si" secondAttribute="bottom" id="XIe-bK-NmJ"/>
+                            <constraint firstItem="prW-HK-t45" firstAttribute="trailing" secondItem="xtl-Az-3si" secondAttribute="trailing" id="Zat-a5-kGp"/>
+                            <constraint firstItem="xtl-Az-3si" firstAttribute="leading" secondItem="prW-HK-t45" secondAttribute="leading" id="uC0-Tv-mn4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="xtl-Az-3si" id="XC7-yW-nfZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eaL-fd-fst" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1843" y="116"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="r8T-Xl-8Ny">
             <objects>
