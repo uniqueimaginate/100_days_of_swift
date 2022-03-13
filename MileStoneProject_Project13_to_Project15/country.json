@@ -1,0 +1,13 @@
+[
+    {
+        "name": "S.Korea",
+        "capitalCity": "Seoul",
+        "population": 10000,
+        "currency": "₩"
+    }, {
+        "name": "U.S",
+        "capitalCity": "Washington D.C",
+        "population": 40000,
+        "currency": "$"
+    }
+]
