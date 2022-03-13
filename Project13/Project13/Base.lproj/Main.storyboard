@@ -48,44 +48,67 @@
                                     <action selector="intensityChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="zoY-qp-w82"/>
                                 </connections>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsa-cM-ug3">
-                                <rect key="frame" x="326.5" y="613" width="55.5" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
-                                <connections>
-                                    <action selector="save:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QMs-jC-w8P"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5a-Fj-8Vq">
-                                <rect key="frame" x="32" y="613" width="110" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5a-Fj-8Vq">
+                                <rect key="frame" x="32" y="653" width="110" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Change Filter"/>
                                 <connections>
                                     <action selector="changeFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZTD-dN-pAj"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsa-cM-ug3">
+                                <rect key="frame" x="326.5" y="653" width="55.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                <connections>
+                                    <action selector="save:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QMs-jC-w8P"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="YWa-ap-Omm">
+                                <rect key="frame" x="126" y="597" width="270" height="31"/>
+                                <connections>
+                                    <action selector="intensityChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="M79-eP-Ikh"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radius" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgF-4a-kbg">
+                                <rect key="frame" x="16" y="601" width="62" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="5Ml-kc-GGt"/>
+                                    <constraint firstAttribute="width" constant="62" id="xPo-Hb-IfJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="b5a-Fj-8Vq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="1Mj-Ke-XA3"/>
+                            <constraint firstItem="YWa-ap-Omm" firstAttribute="leading" secondItem="22I-lB-gTv" secondAttribute="leading" id="FOI-qF-hxN"/>
                             <constraint firstItem="22I-lB-gTv" firstAttribute="leading" secondItem="cRC-1B-r1t" secondAttribute="trailing" constant="40" id="FYp-h8-j2b"/>
+                            <constraint firstItem="YWa-ap-Omm" firstAttribute="top" secondItem="22I-lB-gTv" secondAttribute="bottom" constant="19.5" id="IiU-n6-kY3"/>
+                            <constraint firstItem="RgF-4a-kbg" firstAttribute="leading" secondItem="cRC-1B-r1t" secondAttribute="leading" id="J0m-0f-ow1"/>
                             <constraint firstItem="XTC-MB-D4X" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="NEH-eg-h6f"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xsa-cM-ug3" secondAttribute="trailing" constant="32" id="PPi-q4-y3o"/>
                             <constraint firstItem="cRC-1B-r1t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="TLw-Cm-tD3"/>
                             <constraint firstItem="Xsa-cM-ug3" firstAttribute="centerY" secondItem="b5a-Fj-8Vq" secondAttribute="centerY" id="UyM-l4-itO"/>
                             <constraint firstItem="cRC-1B-r1t" firstAttribute="top" secondItem="XTC-MB-D4X" secondAttribute="bottom" constant="30" id="UyR-wk-Xjh"/>
-                            <constraint firstItem="b5a-Fj-8Vq" firstAttribute="top" secondItem="cRC-1B-r1t" secondAttribute="bottom" constant="40" id="W6Z-LC-H4S"/>
+                            <constraint firstItem="b5a-Fj-8Vq" firstAttribute="top" secondItem="cRC-1B-r1t" secondAttribute="bottom" constant="80" id="W6Z-LC-H4S"/>
                             <constraint firstItem="XTC-MB-D4X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WPv-f4-yiY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XTC-MB-D4X" secondAttribute="trailing" id="aCI-bx-Y6h"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="22I-lB-gTv" secondAttribute="trailing" constant="20" id="aPQ-kI-EcK"/>
+                            <constraint firstItem="YWa-ap-Omm" firstAttribute="width" secondItem="22I-lB-gTv" secondAttribute="width" id="sw3-8j-KX9"/>
                             <constraint firstItem="22I-lB-gTv" firstAttribute="centerY" secondItem="cRC-1B-r1t" secondAttribute="centerY" id="uhe-pZ-9y5"/>
+                            <constraint firstItem="RgF-4a-kbg" firstAttribute="top" secondItem="cRC-1B-r1t" secondAttribute="bottom" constant="28" id="xSl-8p-iTv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Tqf-OE-M0F"/>
                     <connections>
+                        <outlet property="changeFilterButton" destination="b5a-Fj-8Vq" id="lnf-oM-Vpb"/>
                         <outlet property="imageView" destination="P2E-HM-Tfu" id="cYM-61-0h1"/>
                         <outlet property="intensity" destination="22I-lB-gTv" id="BDl-Ia-5vF"/>
+                        <outlet property="radius" destination="YWa-ap-Omm" id="WeY-gy-k2Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

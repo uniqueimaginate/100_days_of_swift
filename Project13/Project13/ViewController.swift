@@ -12,6 +12,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var intensity: UISlider!
+    @IBOutlet weak var radius: UISlider!
+    @IBOutlet weak var changeFilterButton: UIButton!
     
     var currentImage: UIImage!
     var context: CIContext!
@@ -25,6 +27,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         context = CIContext()
         currentFilter = CIFilter(name: "CISepiaTone")
+        changeFilterButton.titleLabel?.text = "CISepiaTone"
     }
     
     @objc func importPicture(){
@@ -53,7 +56,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         // safely read the alert action's title
         guard let actionTitle = action.title else { return }
-
+        changeFilterButton.setTitle(actionTitle, for: .normal)
+        changeFilterButton.sizeToFit()
         currentFilter = CIFilter(name: actionTitle)
 
         let beginImage = CIImage(image: currentImage)
@@ -64,7 +68,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     
     @IBAction func save(_ sender: Any) {
-        guard let image = imageView.image else { return }
+        guard let image = imageView.image else {
+            let vc = UIAlertController(title: "Error", message: "No image", preferredStyle: .alert)
+            let ac = UIAlertAction(title: "OK", style: .default, handler: nil)
+            vc.addAction(ac)
+            
+            present(vc, animated: true)
+        
+            return
+        }
         
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
@@ -103,8 +115,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let inputKeys = currentFilter.inputKeys
         
         if inputKeys.contains(kCIInputIntensityKey) { currentFilter.setValue(intensity.value, forKey: kCIInputIntensityKey) }
-        if inputKeys.contains(kCIInputRadiusKey) { currentFilter.setValue(intensity.value * 200, forKey: kCIInputRadiusKey) }
-        if inputKeys.contains(kCIInputScaleKey) { currentFilter.setValue(intensity.value * 10, forKey: kCIInputScaleKey) }
+        if inputKeys.contains(kCIInputRadiusKey) { currentFilter.setValue(radius.value * 200, forKey: kCIInputRadiusKey) }
+        if inputKeys.contains(kCIInputScaleKey) { currentFilter.setValue(radius.value * 10, forKey: kCIInputScaleKey) }
         if inputKeys.contains(kCIInputCenterKey) { currentFilter.setValue(CIVector(x: currentImage.size.width / 2, y: currentImage.size.height / 2), forKey: kCIInputCenterKey) }
         
         if let cgimg = context.createCGImage(currentFilter.outputImage!, from: currentFilter.outputImage!.extent) {
