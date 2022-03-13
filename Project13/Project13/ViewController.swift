@@ -121,7 +121,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         if let cgimg = context.createCGImage(currentFilter.outputImage!, from: currentFilter.outputImage!.extent) {
             let processedImage = UIImage(cgImage: cgimg)
+            self.imageView.alpha = 0
             self.imageView.image = processedImage
+            UIView.animate(withDuration: 1.0) {
+                self.imageView.alpha = 1
+            }
         }
     }
 }
