@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class ViewController: UIViewController {
 
@@ -36,6 +37,30 @@ class ViewController: UIViewController {
         
         highestScore = UserDefaults.standard.integer(forKey: "highestScore")
         askQuestion()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Register", style: .plain, target: self, action: #selector(scheduleLocal))
+            
+        registerNotification()
+    }
+    
+    func registerNotification(){
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
+
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { _, _ in }
+    }
+    
+    @objc func scheduleLocal(){
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
+        let content = UNMutableNotificationContent()
+        content.title = "Flag Game"
+        content.body = "Come Back and Play!"
+        content.sound = UNNotificationSound.default
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        
+        center.add(request)
     }
     
     func askQuestion(action: UIAlertAction? = nil){
