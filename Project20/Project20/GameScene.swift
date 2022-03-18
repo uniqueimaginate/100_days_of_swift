@@ -42,7 +42,7 @@ class GameScene: SKScene {
         
         score = 0
         
-        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(launchFireworks), userInfo: nil, repeats: true)
+        gameTimer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(launchFireworks), userInfo: nil, repeats: true)
 
     }
     
