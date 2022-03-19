@@ -39,8 +39,33 @@ extension String {
     }
 }
 
+extension String{
+    func withPrefix(_ prefix: String) -> String {
+        if self.hasPrefix(prefix) {
+            return self
+        } else {
+            return prefix + self
+        }
+    }
+}
 
-var greeting = "Hello, playground"
+extension String {
+    var isNumeric: Bool {
+        if Int(self) != nil {
+            return true
+        } else if Double(self) != nil {
+            return true
+        } else {
+            return false
+        }
+    }
+}
+
+extension String {
+    var lines: [String] {
+        return self.components(separatedBy: "\n")
+    }
+}
 
 let name = "Taylor"
 
