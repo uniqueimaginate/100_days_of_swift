@@ -215,6 +215,12 @@ class GameScene: SKScene {
     
     func tossEnemies() {
         if isGameEnded {
+            let node = SKLabelNode(fontNamed: "Chalkduster")
+            node.horizontalAlignmentMode = .center
+            node.fontSize = 48
+            node.position = CGPoint(x: 512, y: 384)
+            node.text = "Game Over"
+            addChild(node)
             return
         }
         popupTime *= 0.991
@@ -294,6 +300,12 @@ class GameScene: SKScene {
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if isGameEnded {
+            let node = SKLabelNode(fontNamed: "Chalkduster")
+            node.horizontalAlignmentMode = .center
+            node.fontSize = 48
+            node.position = CGPoint(x: 512, y: 384)
+            node.text = "Game Over"
+            addChild(node)
             return
         }
         
@@ -373,6 +385,12 @@ class GameScene: SKScene {
     
     func endGame(triggeredByBomb: Bool) {
         if isGameEnded {
+            let node = SKLabelNode(fontNamed: "Chalkduster")
+            node.horizontalAlignmentMode = .center
+            node.fontSize = 48
+            node.position = CGPoint(x: 512, y: 384)
+            node.text = "Game Over"
+            addChild(node)
             return
         }
 
@@ -387,6 +405,13 @@ class GameScene: SKScene {
             livesImages[0].texture = SKTexture(imageNamed: "sliceLifeGone")
             livesImages[1].texture = SKTexture(imageNamed: "sliceLifeGone")
             livesImages[2].texture = SKTexture(imageNamed: "sliceLifeGone")
+            let node = SKLabelNode(fontNamed: "Chalkduster")
+            node.horizontalAlignmentMode = .center
+            node.fontSize = 48
+            node.text = "Game Over"
+            addChild(node)
+            node.position = CGPoint(x: 512, y: 384)
+
         }
     }
     
