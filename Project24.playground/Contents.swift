@@ -4,9 +4,7 @@ extension String {
     subscript(i: Int) -> String {
         return String(self[index(startIndex, offsetBy: i)])
     }
-}
-
-extension String {
+    
     // remove a prefix if it exists
     func deletingPrefix(_ prefix: String) -> String {
         guard self.hasPrefix(prefix) else { return self }
@@ -18,28 +16,21 @@ extension String {
         guard self.hasSuffix(suffix) else { return self }
         return String(self.dropLast(suffix.count))
     }
-}
-
-extension String {
+    
     var capitalizedFirst: String {
         guard let firstLetter = self.first else { return "" }
         return firstLetter.uppercased() + self.dropFirst()
     }
-}
-
-extension String {
+    
     func containsAny(of array: [String]) -> Bool {
         for item in array {
             if self.contains(item) {
                 return true
             }
         }
-
         return false
     }
-}
-
-extension String{
+    
     func withPrefix(_ prefix: String) -> String {
         if self.hasPrefix(prefix) {
             return self
@@ -47,9 +38,7 @@ extension String{
             return prefix + self
         }
     }
-}
-
-extension String {
+    
     var isNumeric: Bool {
         if Int(self) != nil {
             return true
@@ -59,12 +48,46 @@ extension String {
             return false
         }
     }
-}
-
-extension String {
+    
     var lines: [String] {
         return self.components(separatedBy: "\n")
     }
+}
+
+extension UIView {
+    func bounceOut(duration: Double){
+        UIView.animate(withDuration: duration) {
+            self.transform = CGAffineTransform(scaleX: 0.0001, y: 0.0001)
+        }
+    }
+}
+
+extension Int {
+    func times(_ action: () -> Void){
+        for _ in 0..<self {
+            action()
+        }
+    }
+}
+
+extension Array where Element: Comparable {
+    mutating func remove(item: Element) -> Array{
+
+        if let index = self.firstIndex(of: item) {
+            self.remove(at: index)
+        }
+
+        return self
+    }
+}
+
+var arr = ["a","b","c","d"]
+
+arr.remove(item: "c")
+
+
+3.times {
+    print("Hello World!")
 }
 
 let name = "Taylor"
