@@ -90,10 +90,13 @@
 - Day82:	`2022.03.19`
 - Day83, 84:	`2022.03.19`  Project25 has an error.
 
+After Day84, I decided to suspend keep doing this course.    
+The reason is I think the rest of the course is not necessary for me.    
+Thus, I will move on to <b>Hacking With Swift: 100 Days of SwiftUI Course</b>
 
 
 
-
+## 100 Days of SwiftUI
 
 
 
